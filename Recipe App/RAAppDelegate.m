@@ -7,6 +7,8 @@
 //
 
 #import "RAAppDelegate.h"
+#import "RAViewController.h"
+#import "RARecipes.h"
 
 @implementation RAAppDelegate
 
@@ -14,7 +16,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    RAViewController *viewController = [[RAViewController alloc] init];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    //viewController.title = @"Favorite Recipes";
+    
+    
+    //UITextFieldLabel *textField = [[UITextFieldLabel]]
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
