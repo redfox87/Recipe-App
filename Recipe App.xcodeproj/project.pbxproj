@@ -19,6 +19,7 @@
 		71F67B6C192C8D6A00E609F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B54192C8D6A00E609F1 /* UIKit.framework */; };
 		71F67B74192C8D6A00E609F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71F67B72192C8D6A00E609F1 /* InfoPlist.strings */; };
 		71F67B76192C8D6A00E609F1 /* Recipe_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F67B75192C8D6A00E609F1 /* Recipe_AppTests.m */; };
+		CFCE188A1AF2C56300C1ABDD /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCE18891AF2C56300C1ABDD /* RecipeDetailViewController.m */; };
 		CFD1DB921AF16B7100AB7F82 /* RAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DB911AF16B7100AB7F82 /* RAViewController.m */; };
 		CFD1DB981AF1710B00AB7F82 /* RARecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DB971AF1710B00AB7F82 /* RARecipes.m */; };
 		CFD1DB9B1AF1716F00AB7F82 /* RecipesTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD1DB9A1AF1716F00AB7F82 /* RecipesTableViewDataSource.m */; };
@@ -51,6 +52,8 @@
 		71F67B71192C8D6A00E609F1 /* Recipe AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Recipe AppTests-Info.plist"; sourceTree = "<group>"; };
 		71F67B73192C8D6A00E609F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71F67B75192C8D6A00E609F1 /* Recipe_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipe_AppTests.m; sourceTree = "<group>"; };
+		CFCE18881AF2C56300C1ABDD /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		CFCE18891AF2C56300C1ABDD /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		CFD1DB901AF16B7100AB7F82 /* RAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewController.h; sourceTree = "<group>"; };
 		CFD1DB911AF16B7100AB7F82 /* RAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewController.m; sourceTree = "<group>"; };
 		CFD1DB961AF1710B00AB7F82 /* RARecipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RARecipes.h; path = ../RARecipes.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				71F67B60192C8D6A00E609F1 /* RAAppDelegate.m */,
 				CFD1DB901AF16B7100AB7F82 /* RAViewController.h */,
 				CFD1DB911AF16B7100AB7F82 /* RAViewController.m */,
+				CFCE18881AF2C56300C1ABDD /* RecipeDetailViewController.h */,
+				CFCE18891AF2C56300C1ABDD /* RecipeDetailViewController.m */,
 				CFD1DB961AF1710B00AB7F82 /* RARecipes.h */,
 				CFD1DB971AF1710B00AB7F82 /* RARecipes.m */,
 				CFD1DB991AF1716F00AB7F82 /* RecipesTableViewDataSource.h */,
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD1DB981AF1710B00AB7F82 /* RARecipes.m in Sources */,
+				CFCE188A1AF2C56300C1ABDD /* RecipeDetailViewController.m in Sources */,
 				71F67B5D192C8D6A00E609F1 /* main.m in Sources */,
 				CFD1DB9B1AF1716F00AB7F82 /* RecipesTableViewDataSource.m in Sources */,
 				71F67B61192C8D6A00E609F1 /* RAAppDelegate.m in Sources */,

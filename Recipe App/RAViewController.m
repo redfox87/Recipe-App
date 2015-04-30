@@ -8,8 +8,9 @@
 
 #import "RAViewController.h"
 #import "RecipesTableViewDataSource.h"
-
-@interface RAViewController ()
+#import "RARecipes.h"
+#import "RecipeDetailViewController.h"
+@interface RAViewController ()<UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *TableView;
 @property (strong, nonatomic) RecipesTableViewDataSource *dataSource;
@@ -24,11 +25,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
     self.TableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.dataSource = [RecipesTableViewDataSource new];
     self.TableView.dataSource = self.dataSource;
+    self.TableView.delegate = self;
     [self.view addSubview:self.TableView];
     self.title = @"Favorite Recipes!";
+    self.TableView.backgroundColor = [UIColor grayColor];
  
     
 }
@@ -38,14 +43,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //This de-selects the cell after it's been clicked.
+    RecipeDetailViewController *subViewRecipe = [[RecipeDetailViewController alloc] init];
+    
+    NSString *recipeName = [RARecipes titleAtIndex:indexPath.row];
+   //This the makes the title correspond
+    
+    subViewRecipe.title = recipeName;
+    
+    subViewRecipe.recipeIndex = indexPath.row;
+    
+    [self.navigationController pushViewController:subViewRecipe animated:YES];
+    
+    
+    
+    //This is making it viewable on our second page
+    
 }
-*/
+
 
 @end

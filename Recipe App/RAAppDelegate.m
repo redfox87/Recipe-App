@@ -25,7 +25,7 @@
     
     
     //UITextFieldLabel *textField = [[UITextFieldLabel]]
-    self.window.backgroundColor = [UIColor blackColor];
+    self.window.backgroundColor = [UIColor redColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
