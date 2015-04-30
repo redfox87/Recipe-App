@@ -25,8 +25,8 @@ static NSString *cellID = @"cellID";
     
     cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
     cell.detailTextLabel.text = [RARecipes descriptionAtIndex:indexPath.row];
-    cell.textLabel.font =[UIFont boldSystemFontOfSize:(20)];
-    cell.detailTextLabel.font =[UIFont systemFontOfSize:(10)];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:(20)];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:(10)];
     cell.textLabel.textColor = [UIColor lightTextColor];
     cell.backgroundColor = [UIColor blackColor];
     return cell;

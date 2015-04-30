@@ -54,7 +54,7 @@
     
     subViewRecipe.title = recipeName;
     
-    subViewRecipe.recipeIndex = indexPath.row;
+    subViewRecipe.recipeIndex = indexPath.row; //this is used HEAVILY in RecipeDetailViewController to set the size of each UILabel
     
     [self.navigationController pushViewController:subViewRecipe animated:YES];
     

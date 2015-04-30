@@ -18,16 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CGFloat topMargin = 0;
-
-    
     
     UIScrollView *scrollRecipes = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollRecipes.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:scrollRecipes];
     
     CGFloat heightDescription = [self heightForDescription:[RARecipes descriptionAtIndex:self.recipeIndex]];
+    // ^^ this float employs the heightForDescription method. this returns  float that gives us a hieght size.
+    // ^^ in this case we pass  the RARecipes object and its method descriptionatIndex as the argument for hieghtforDescription
+    // ^^ the descriptionatindec method takes the recipeindex property (an integer) as its argument
+    
     UILabel *descriptionLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,topMargin, self.view.frame.size.width, heightDescription)];
     descriptionLabel.text = [RARecipes descriptionAtIndex:self.recipeIndex];
+    
+    descriptionLabel.numberOfLines = 0; // this allows the descriptionLabel to take as many lines as it needs to display its content.
     
     
     
