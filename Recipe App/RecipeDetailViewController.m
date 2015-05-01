@@ -19,8 +19,10 @@
     [super viewDidLoad];
     CGFloat topMargin = 15;
 
+    double topPlusHeight = 0.0;
     
-    UIScrollView *scrollRecipes = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    UIScrollView *scrollRecipes = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    scrollRecipes.contentSize = CGSizeMake( self.view.frame.size.width, self.view.frame.size.height +20);
     scrollRecipes.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:scrollRecipes];
     
@@ -37,20 +39,7 @@
     descriptionLabel.text = [RARecipes descriptionAtIndex:self.recipeIndex];
     [scrollRecipes addSubview:descriptionLabel];
     
-    NSInteger directionLabelTopMargin = 0;
-    
-    for (int i = 0; i < [[RARecipes directionsAtIndex:self.recipeIndex] count]; i++) {
-        CGFloat heightDirection = [self heightForDescription:[directions objectAtIndex:i]];
-        
-        UILabel *directionsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 200 + 20*i + directionLabelTopMargin, self.view.frame.size.width, heightDirection)];
-        directionsLabel.numberOfLines = 0;
-        
-        directionsLabel.text = [RARecipes directionsAtIndex:self.recipeIndex][i];
-        
-        [scrollRecipes addSubview:directionsLabel];
-        
-        directionLabelTopMargin += heightDirection;
-    }
+   
     
     // this For loop is going through the ammount of ingredients
     for(int i = 0; i < [RARecipes ingredientCountAtIndex:self.recipeIndex]; i++)
@@ -64,7 +53,26 @@
         ingredientsLabelsValue.numberOfLines = 0; // this allows the descriptionLabel to take as many lines as it needs to display its content.
         ingredientsLabelsValue.text = [RARecipes ingredientTypeAtIndex:i inRecipeAtIndex:self.recipeIndex];
         [scrollRecipes addSubview:ingredientsLabelsValue];
+        
+        topPlusHeight = ingredientsLabelsValue.frame.size.height + topMargin + 25 * i;
     }
+    
+    NSInteger directionLabelTopMargin = 0;
+    
+    for (int i = 0; i < [[RARecipes directionsAtIndex:self.recipeIndex] count]; i++) {
+        CGFloat heightDirection = [self heightForDescription:[directions objectAtIndex:i]];
+        
+        UILabel *directionsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 100 + topPlusHeight + 150*i, self.view.frame.size.width, heightDirection)];
+        directionsLabel.numberOfLines = 0;
+    
+        
+        directionsLabel.text = [RARecipes directionsAtIndex:self.recipeIndex][i];
+        
+        [scrollRecipes addSubview:directionsLabel];
+        
+        directionLabelTopMargin += heightDirection;
+    }
+    
     
     }
 - (CGFloat) heightForDescription:(NSString *) description
